@@ -25,7 +25,7 @@ final class VibeViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedVibe, .chill, "Selected vibe should not be nil")
     }
 
-    func test_selectedView_whenUpdatedShouldIncreaseCount() {
+    func test_selectedVibe_whenUpdatedShouldIncreaseCount() {
         let sut = makeSUT()
 
         sut.update(selected: .focus)
