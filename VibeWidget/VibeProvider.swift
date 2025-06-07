@@ -30,7 +30,7 @@ struct VibeProvider: TimelineProvider {
             let weekCount = decoded.filter {
                 Calendar.current.isDate($0.timestamp, equalTo: Date(), toGranularity: .weekOfYear)
             }.count
-            return VibeEntry(date: Date(), vibe: last, count: weekCount + 1)
+            return VibeEntry(date: Date(), vibe: last, count: weekCount)
         }
         return VibeEntry(date: Date(), vibe: nil, count: 0)
     }
