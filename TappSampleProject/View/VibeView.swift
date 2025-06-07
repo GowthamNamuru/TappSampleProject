@@ -26,12 +26,12 @@ struct VibeView: View {
                         .padding()
                         .background(Color.blue.opacity(0.2))
                         .cornerRadius(10)
-                        .scaleEffect(viewModel.selectedVibe == vibe ? 1.1 : 1.0)
+                        .scaleEffect(viewModel.selectedVibe == vibe ? 1.3 : 1.0)
                 }
             }
 
-            if let vibe = viewModel.selectedVibe {
-                Text("Your vibe today: \(vibe.rawValue)")
+            if let text = viewModel.selectedVibeText {
+                Text(text)
                     .font(.headline)
                     .padding(.top)
             }
