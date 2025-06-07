@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VibeView: View {
 
-    @StateObject private var viewModel = VibeViewModel(vibeStore: VibeDataProvider("group.com.tapp.tappSample"))
+    @StateObject private var viewModel = VibeViewModel(vibeStore: VibeDataProvider(VibeRequirements.storeLocation()))
 
     var body: some View {
         VStack(spacing: 20) {

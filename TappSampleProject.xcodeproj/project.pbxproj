@@ -71,6 +71,7 @@
 			membershipExceptions = (
 				Helpers/DateHelpers.swift,
 				Model/Vibe.swift,
+				Model/VibeRequirements.swift,
 				ViewModel/DataProvider/VibeDataProvider.swift,
 				ViewModel/VibeViewModel.swift,
 			);

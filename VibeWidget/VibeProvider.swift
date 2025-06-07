@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 
 struct VibeProvider: TimelineProvider {
-    private var viewModel: VibeStoreProtocol = VibeDataProvider("group.com.tapp.tappSample")
+    private var viewModel: VibeStoreProtocol = VibeDataProvider(VibeRequirements.storeLocation())
 
     func placeholder(in context: Context) -> VibeEntry {
         VibeEntry(date: Date(), vibe: nil, count: 0)
