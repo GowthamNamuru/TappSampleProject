@@ -8,7 +8,12 @@
 import Foundation
 
 // As of now we are using UserDefaults, as our usecase is simple, we can migrate to any storage model in future.
-final class VibeDataProvider {
+final class VibeDataProvider: VibeStoreProtocol {
+
+    var count: Int {
+        return vibes()?.count ?? .zero
+    }
+
 
     private let store: UserDefaults
 
@@ -16,7 +21,7 @@ final class VibeDataProvider {
         store = UserDefaults(suiteName: suiteName) ?? .standard
     }
 
-    func storeVibe(_ vibe: Vibe, timeStamp: () -> Date) {
+    func store(_ vibe: Vibe, timeStamp: () -> Date) {
         // Get previosly stored Vibes with dateStamp
         // add the new vibe along with new timeStamp
         if var previouslyStoredVibes = storedVibes() {

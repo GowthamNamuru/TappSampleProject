@@ -21,7 +21,7 @@ final class VibeDataProviderTests: XCTestCase {
 
         let expectedVibe: [SelectedVibes] = [.init(vibe: .focus, timeStamp: date)]
 
-        sut.storeVibe(.focus, timeStamp: {date})
+        sut.store(.focus, timeStamp: {date})
 
         XCTAssertEqual(sut.vibes(), expectedVibe)
     }
@@ -33,10 +33,26 @@ final class VibeDataProviderTests: XCTestCase {
 
         let expectedVibe: [SelectedVibes] = [.init(vibe: .focus, timeStamp: date1), .init(vibe: .focus, timeStamp: date2)]
 
-        sut.storeVibe(.focus, timeStamp: {date1})
-        sut.storeVibe(.focus, timeStamp: {date2})
+        sut.store(.focus, timeStamp: {date1})
+        sut.store(.focus, timeStamp: {date2})
 
         XCTAssertEqual(sut.vibes(), expectedVibe)
+    }
+
+    func test_shouldReturnCount() {
+        let sut = makeSUT()
+
+        sut.store(.focus, timeStamp: Date.init)
+        sut.store(.joy, timeStamp: Date.init)
+        sut.store(.chill, timeStamp: Date.init)
+
+        XCTAssertEqual(sut.count, 3)
+    }
+
+    func test_shouldReturnEmptyCount_whenInitialised() {
+        let sut = makeSUT()
+
+        XCTAssertEqual(sut.count, .zero)
     }
 
     // MARK: Helpers
