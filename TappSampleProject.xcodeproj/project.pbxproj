@@ -59,23 +59,22 @@
 			);
 			target = 1511C4422DF4422E00E068B7 /* VibeWidgetExtension */;
 		};
-		1511C45E2DF442E500E068B7 /* Exceptions for "TappSampleProject" folder in "VibeWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Helpers/DateHelpers.swift,
-				Helpers/FireworksView.swift,
-				Model/Vibe.swift,
-				ViewModel/DataProvider/VibeDataProvider.swift,
-				ViewModel/VibeViewModel.swift,
-			);
-			target = 1511C4422DF4422E00E068B7 /* VibeWidgetExtension */;
-		};
 		15D4D4AF2DF4B81B00B8D674 /* Exceptions for "TappSampleProject" folder in "TappSampleProject" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = 1511C33F2DF3BFD800E068B7 /* TappSampleProject */;
+		};
+		15D4D4B32DF4BD4A00B8D674 /* Exceptions for "Shared" folder in "VibeWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Helpers/DateHelpers.swift,
+				Model/Vibe.swift,
+				ViewModel/DataProvider/VibeDataProvider.swift,
+				ViewModel/VibeViewModel.swift,
+			);
+			target = 1511C4422DF4422E00E068B7 /* VibeWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -84,7 +83,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				15D4D4AF2DF4B81B00B8D674 /* Exceptions for "TappSampleProject" folder in "TappSampleProject" target */,
-				1511C45E2DF442E500E068B7 /* Exceptions for "TappSampleProject" folder in "VibeWidgetExtension" target */,
 			);
 			path = TappSampleProject;
 			sourceTree = "<group>";
@@ -100,6 +98,14 @@
 				1511C45B2DF4422F00E068B7 /* Exceptions for "VibeWidget" folder in "VibeWidgetExtension" target */,
 			);
 			path = VibeWidget;
+			sourceTree = "<group>";
+		};
+		15D4D4B22DF4BD3900B8D674 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				15D4D4B32DF4BD4A00B8D674 /* Exceptions for "Shared" folder in "VibeWidgetExtension" target */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -134,6 +140,7 @@
 		1511C3372DF3BFD800E068B7 = {
 			isa = PBXGroup;
 			children = (
+				15D4D4B22DF4BD3900B8D674 /* Shared */,
 				1511C3422DF3BFD800E068B7 /* TappSampleProject */,
 				1511C3532DF3BFD900E068B7 /* TappSampleProjectTests */,
 				1511C4492DF4422E00E068B7 /* VibeWidget */,
@@ -180,6 +187,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1511C3422DF3BFD800E068B7 /* TappSampleProject */,
+				15D4D4B22DF4BD3900B8D674 /* Shared */,
 			);
 			name = TappSampleProject;
 			packageProductDependencies = (
