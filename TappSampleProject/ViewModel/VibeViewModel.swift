@@ -20,6 +20,7 @@ final class VibeViewModel: ObservableObject {
     @Published private(set) var selectedVibe: Vibe?
     @Published private(set) var vibeCount: Int = 0
     @Published private(set) var timeStamp: Date?
+    @Published var showSuprise: Bool = false
 
     var selectedVibeText: String? {
         guard let selectedVibe else {
@@ -52,6 +53,7 @@ final class VibeViewModel: ObservableObject {
         timeStamp = date
         vibeStore.store(vibe, timeStamp: {date})
         vibeCount = vibeStore.count
+        showSuprise = shouldSuprise()
     }
 
     func load() {

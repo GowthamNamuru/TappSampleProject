@@ -63,6 +63,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Helpers/DateHelpers.swift,
+				Helpers/FireworksView.swift,
 				Model/Vibe.swift,
 				ViewModel/DataProvider/VibeDataProvider.swift,
 				ViewModel/VibeViewModel.swift,

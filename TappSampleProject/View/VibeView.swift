@@ -40,6 +40,7 @@ struct VibeView: View {
         .onAppear {
             viewModel.load()
         }
+        .displayConfetti(isActive: $viewModel.showSuprise)
     }
 }
 
