@@ -27,19 +27,22 @@ final class VibeViewModelTests: XCTestCase {
 
     func test_selectedVibe_whenUpdatedShouldIncreaseCount() {
         let (sut, _) = makeSUT()
+        let date = Date()
 
-        sut.update(selected: .focus)
+        sut.update(selected: .focus, date: date)
 
         XCTAssertEqual(sut.vibeCount, 1, "Vibe count should increase")
     }
 
     func test_selectedVibe_onUpdateShouldStore() {
         let (sut, store) = makeSUT()
+        let date = Date()
 
-        sut.update(selected: .joy)
+        sut.update(selected: .joy, date: date)
+        let expectedVibe = [SelectedVibes(vibe: .joy, timeStamp: date)]
 
-        XCTAssertEqual(store.getVibe(), .joy)
-        XCTAssertEqual(store.vibeCount(), 1)
+        XCTAssertEqual(store.vibes(), expectedVibe)
+        XCTAssertEqual(store.count, 1)
     }
 
     // MARK: - Helpers
@@ -49,20 +52,20 @@ final class VibeViewModelTests: XCTestCase {
     }
 
     private class VibeStoreMock: VibeStoreProtocol {
-        private(set) var count = 0
-        private(set) var selectedVibe: Vibe?
+        private(set) var vibeCount = 0
+        private(set) var selectedVibe: SelectedVibes?
 
-        func updateVibe(_ vibe: TappSampleProject.Vibe) {
-            selectedVibe = vibe
-            count += 1
+        func store(_ vibe: Vibe, timeStamp: () -> Date) {
+            selectedVibe = SelectedVibes(vibe: vibe, timeStamp: timeStamp())
+            vibeCount += 1
         }
         
-        func getVibe() -> TappSampleProject.Vibe? {
-            selectedVibe
+        func vibes() -> [TappSampleProject.SelectedVibes]? {
+            selectedVibe != nil ? [selectedVibe!] :  []
         }
         
-        func vibeCount() -> Int {
-            count
+        var count: Int {
+            vibeCount
         }
     }
 }

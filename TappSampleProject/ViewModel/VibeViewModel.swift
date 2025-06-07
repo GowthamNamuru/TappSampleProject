@@ -9,9 +9,10 @@ import Combine
 import WidgetKit
 
 protocol VibeStoreProtocol {
-    func updateVibe(_ vibe: Vibe)
-    func getVibe() -> Vibe?
-    func vibeCount() -> Int
+    var count: Int { get }
+
+    func store(_ vibe: Vibe, timeStamp: () -> Date)
+    func vibes() -> [SelectedVibes]?
 }
 
 
@@ -25,9 +26,9 @@ final class VibeViewModel: ObservableObject {
         self.vibeStore = vibeStore
     }
 
-    func update(selected vibe: Vibe) {
+    func update(selected vibe: Vibe, date: Date = Date()) {
         selectedVibe = vibe
-        vibeStore.updateVibe(vibe)
-        vibeCount = vibeStore.vibeCount()
+        vibeStore.store(vibe, timeStamp: {date})
+        vibeCount = vibeStore.count
     }
 }
