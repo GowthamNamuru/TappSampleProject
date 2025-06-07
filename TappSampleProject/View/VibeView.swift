@@ -17,17 +17,13 @@ struct VibeView: View {
                 .font(.title)
 
             ForEach(viewModel.availableVibes, id: \.self) { vibe in
-                Button {
+
+                VibeButton(emoji: vibe.emoji, title: vibe.text) {
                     withAnimation(.spring()) {
                         viewModel.update(selected: vibe)
                     }
-                } label: {
-                    Text(vibe.rawValue)
-                        .padding()
-                        .background(Color.blue.opacity(0.2))
-                        .cornerRadius(10)
-                        .scaleEffect(viewModel.selectedVibe == vibe ? 1.3 : 1.0)
                 }
+                .scaleEffect(viewModel.selectedVibe == vibe ? 1.3 : 1.0)
             }
 
             if let text = viewModel.selectedVibeText {
