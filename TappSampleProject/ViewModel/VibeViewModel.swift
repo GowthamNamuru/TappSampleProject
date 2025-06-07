@@ -10,7 +10,7 @@ import WidgetKit
 
 class VibeViewModel: ObservableObject {
     @Published private(set) var selectedVibe: Vibe?
-    @Published var vibeCount: Int = 0
+    @Published private(set) var vibeCount: Int = 0
 
     func update(selected vibe: Vibe) {
         selectedVibe = vibe

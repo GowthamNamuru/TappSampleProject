@@ -10,26 +10,31 @@ import XCTest
 
 final class VibeViewModelTests: XCTestCase {
     func test_selectedVibe_shouldBeNilWhenInitialized() {
-        let viewModel = VibeViewModel()
-        
-        let selectedVibe = viewModel.selectedVibe
+        let sut = makeSUT()
+
+        let selectedVibe = sut.selectedVibe
 
         XCTAssertNil(selectedVibe, "Selected vibe should be nil")
     }
 
     func test_selectedVibe_shouldNotBeNilWhenAssigned() {
-        let viewModel = VibeViewModel()
+        let sut = makeSUT()
 
-        viewModel.update(selected: .chill)
+        sut.update(selected: .chill)
 
-        XCTAssertEqual(viewModel.selectedVibe, .chill, "Selected vibe should not be nil")
+        XCTAssertEqual(sut.selectedVibe, .chill, "Selected vibe should not be nil")
     }
 
     func test_selectedView_whenUpdatedShouldIncreaseCount() {
-        let viewModel = VibeViewModel()
+        let sut = makeSUT()
 
-        viewModel.update(selected: .focus)
+        sut.update(selected: .focus)
 
-        XCTAssertEqual(viewModel.vibeCount, 1, "Vibe count should increase")
+        XCTAssertEqual(sut.vibeCount, 1, "Vibe count should increase")
+    }
+
+    // MARK: - Helpers
+    private func makeSUT() -> VibeViewModel {
+        VibeViewModel()
     }
 }
