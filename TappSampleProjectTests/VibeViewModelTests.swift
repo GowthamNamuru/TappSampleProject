@@ -1,5 +1,5 @@
 //
-//  VibeViewModel.swift
+//  VibeViewModelTests.swift
 //  TappSampleProjectTests
 //
 //  Created by Gowtham Namuru on 07/06/25.
