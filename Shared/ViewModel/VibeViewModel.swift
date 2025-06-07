@@ -62,6 +62,7 @@ final class VibeViewModel: ObservableObject {
     func load() {
         let previousVibe = vibeStore.vibes()?.sorted { $0.timestamp > $1.timestamp }.first
         (selectedVibe, timeStamp) = (previousVibe?.vibe, previousVibe?.timestamp)
+        showSuprise = shouldSuprise()
     }
 
     private func shouldSuprise() -> Bool {
