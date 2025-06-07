@@ -58,7 +58,7 @@ final class VibeViewModelTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertEqual(sut.selectedVibeText, "Your vibe for yesterday is: \(Vibe.focus.rawValue)")
+        XCTAssertEqual(sut.selectedVibeText, "Your vibe for yesterday is: \(Vibe.focus.completeString)")
     }
 
     func test_selectedVibeText_shouldBeNil() {
@@ -74,7 +74,7 @@ final class VibeViewModelTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertEqual(sut.selectedVibeText, "Your vibe for today is: \(Vibe.chill.rawValue)")
+        XCTAssertEqual(sut.selectedVibeText, "Your vibe for today is: \(Vibe.chill.completeString)")
     }
 
     func test_selectedVibeText_storedTwoDaysBack() {
@@ -85,7 +85,7 @@ final class VibeViewModelTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertEqual(sut.selectedVibeText, "Your vibe for \(storedDate.formattedDate()) is: \(Vibe.chill.rawValue)")
+        XCTAssertEqual(sut.selectedVibeText, "Your vibe for \(storedDate.formattedDate()) is: \(Vibe.chill.completeString)")
     }
 
     func test_selectedVibeText_storedTwoVibeBackToBackOnTwoDay() {
@@ -98,7 +98,7 @@ final class VibeViewModelTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertEqual(sut.selectedVibeText, "Your vibe for today is: \(Vibe.chill.rawValue)")
+        XCTAssertEqual(sut.selectedVibeText, "Your vibe for today is: \(Vibe.chill.completeString)")
     }
 
     func test_selectedVibeText_storedVibeFewDaysBack() {
@@ -110,7 +110,7 @@ final class VibeViewModelTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertEqual(sut.selectedVibeText, "Your vibe for \(threeDays.formattedDate()) is: \(Vibe.power.rawValue)")
+        XCTAssertEqual(sut.selectedVibeText, "Your vibe for \(threeDays.formattedDate()) is: \(Vibe.power.completeString)")
     }
 
     func test_shouldSuprise_returnFalse() {

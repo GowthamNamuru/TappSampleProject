@@ -31,6 +31,10 @@ enum Vibe: String, CaseIterable, Codable {
     var text: String {
         return self.rawValue.capitalized
     }
+
+    var completeString: String {
+        "\(self.emoji) \(self.text)"
+    }
 }
 
 struct SelectedVibes: Codable {
