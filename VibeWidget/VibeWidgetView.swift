@@ -17,8 +17,6 @@ struct VibeWidgetView: View {
                     .font(.headline)
                 Text("\(vibe.emoji)  \(vibe.text)")
                     .font(.largeTitle)
-                    .scaleEffect(entry.count % 7 == 0 ? 1.2 : 1.0)
-                    .animation(.spring(), value: entry.count)
             } else {
                 Text("No vibe yet — pick one!")
             }
