@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct TappSampleProjectApp: App {
+    @State private var isSplashActive = true
+
     var body: some Scene {
         WindowGroup {
-            VibeView()
+            if isSplashActive {
+                SplashScreenView(isActive: $isSplashActive)
+            } else {
+                VibeView()
+            }
         }
     }
 }
