@@ -14,14 +14,22 @@ final class VibeViewModelTests: XCTestCase {
         
         let selectedVibe = viewModel.selectedVibe
 
-        XCTAssertNil(selectedVibe)
+        XCTAssertNil(selectedVibe, "Selected vibe should be nil")
     }
 
     func test_selectedVibe_shouldNotBeNilWhenAssigned() {
         let viewModel = VibeViewModel()
 
-        viewModel.selectedVibe = .chill
+        viewModel.update(selected: .chill)
 
-        XCTAssertEqual(viewModel.selectedVibe, .chill)
+        XCTAssertEqual(viewModel.selectedVibe, .chill, "Selected vibe should not be nil")
+    }
+
+    func test_selectedView_whenUpdatedShouldIncreaseCount() {
+        let viewModel = VibeViewModel()
+
+        viewModel.update(selected: .focus)
+
+        XCTAssertEqual(viewModel.vibeCount, 1, "Vibe count should increase")
     }
 }
