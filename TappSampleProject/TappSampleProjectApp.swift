@@ -24,6 +24,7 @@ struct TappSampleProjectApp: App {
                         }
                     }
                     .alert(isPresented: $showAlert) {
+                        // We can add our implementations. As of now we don't many screens to navigate so showing the alert to differenciate the launch type.
                         Alert(title: Text("Launched from Widget!"), message: Text("Pick Vibe for today!"), dismissButton: .default(Text("Okay")))
                     }
             }
