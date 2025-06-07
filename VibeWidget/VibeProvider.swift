@@ -9,8 +9,7 @@ import WidgetKit
 import SwiftUI
 
 struct VibeProvider: TimelineProvider {
-    private var viewModel: VibeDataProvider = VibeDataProvider("group.com.tapp.vibeapp")
-
+    private var viewModel: VibeDataProvider = VibeDataProvider("group.com.tapp.tappSample")
 
     func placeholder(in context: Context) -> VibeEntry {
         VibeEntry(date: Date(), vibe: nil, count: 0)
@@ -41,4 +40,19 @@ struct VibeEntry: TimelineEntry {
     let date: Date
     let vibe: Vibe?
     let count: Int
+
+    var backgroundColor: Color {
+        switch vibe {
+        case .joy:
+            return .green.opacity(0.6)
+        case .chill:
+            return .blue.opacity(0.6)
+        case .focus:
+            return .yellow.opacity(0.6)
+        case .power:
+            return .red.opacity(0.6)
+        default:
+            return .gray.opacity(0.6)
+        }
+    }
 }

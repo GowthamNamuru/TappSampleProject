@@ -15,6 +15,7 @@ struct VibeWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: VibeProvider()) {
             VibeWidgetView(entry: $0)
+                .containerBackground($0.backgroundColor.tertiary, for: .widget)
         }
         .configurationDisplayName("Vibe of the day")
         .supportedFamilies([.systemMedium, .systemLarge])

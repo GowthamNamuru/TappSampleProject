@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WidgetKit
 
 // As of now we are using UserDefaults, as our usecase is simple, we can migrate to any storage model in future.
 final class VibeDataProvider: VibeStoreProtocol {
@@ -29,12 +30,14 @@ final class VibeDataProvider: VibeStoreProtocol {
             if let dataToStore = encodedVibes(previouslyStoredVibes) {
                 // Store all the vibes
                 store.set(dataToStore, forKey: Constants.storedVibes)
+                WidgetCenter.shared.reloadAllTimelines()
             }
         } else {
             let vibeToStore = SelectedVibes(vibe: vibe, timeStamp: timeStamp())
             if let dataToStore = encodedVibes([vibeToStore]) {
                 // Store all the vibes
                 store.set(dataToStore, forKey: Constants.storedVibes)
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
     }

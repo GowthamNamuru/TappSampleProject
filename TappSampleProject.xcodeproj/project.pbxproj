@@ -49,7 +49,6 @@
 		1511C4432DF4422E00E068B7 /* VibeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VibeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1511C4452DF4422E00E068B7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1511C4472DF4422E00E068B7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		1511C45F2DF443AA00E068B7 /* VibeWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VibeWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -126,7 +125,6 @@
 		1511C3372DF3BFD800E068B7 = {
 			isa = PBXGroup;
 			children = (
-				1511C45F2DF443AA00E068B7 /* VibeWidgetExtension.entitlements */,
 				1511C3422DF3BFD800E068B7 /* TappSampleProject */,
 				1511C3532DF3BFD900E068B7 /* TappSampleProjectTests */,
 				1511C4492DF4422E00E068B7 /* VibeWidget */,
@@ -460,7 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TappSampleProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 3WR7CH3L52;
+				DEVELOPMENT_TEAM = 9VDWZ8797J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -473,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = group.com.tapp.TappSampleProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapp.tappSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,7 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TappSampleProject/Preview Content\"";
-				DEVELOPMENT_TEAM = 3WR7CH3L52;
+				DEVELOPMENT_TEAM = 9VDWZ8797J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -503,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = group.com.tapp.TappSampleProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapp.tappSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -562,7 +560,7 @@
 				CODE_SIGN_ENTITLEMENTS = VibeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3WR7CH3L52;
+				DEVELOPMENT_TEAM = 9VDWZ8797J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VibeWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VibeWidget;
@@ -573,7 +571,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = group.com.tapp.TappSampleProject.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapp.tappSample.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -590,7 +588,7 @@
 				CODE_SIGN_ENTITLEMENTS = VibeWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3WR7CH3L52;
+				DEVELOPMENT_TEAM = 9VDWZ8797J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VibeWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VibeWidget;
@@ -601,7 +599,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = group.com.tapp.TappSampleProject.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tapp.tappSample.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
