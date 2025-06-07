@@ -70,12 +70,20 @@
 			);
 			target = 1511C4422DF4422E00E068B7 /* VibeWidgetExtension */;
 		};
+		15D4D4AF2DF4B81B00B8D674 /* Exceptions for "TappSampleProject" folder in "TappSampleProject" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1511C33F2DF3BFD800E068B7 /* TappSampleProject */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1511C3422DF3BFD800E068B7 /* TappSampleProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				15D4D4AF2DF4B81B00B8D674 /* Exceptions for "TappSampleProject" folder in "TappSampleProject" target */,
 				1511C45E2DF442E500E068B7 /* Exceptions for "TappSampleProject" folder in "VibeWidgetExtension" target */,
 			);
 			path = TappSampleProject;
@@ -462,6 +470,7 @@
 				DEVELOPMENT_TEAM = 9VDWZ8797J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TappSampleProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,6 +501,7 @@
 				DEVELOPMENT_TEAM = 9VDWZ8797J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TappSampleProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

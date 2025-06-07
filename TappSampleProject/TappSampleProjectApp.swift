@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct TappSampleProjectApp: App {
     @State private var isSplashActive = true
+    @State private var showAlert: Bool = false
 
     var body: some Scene {
         WindowGroup {
@@ -17,6 +18,14 @@ struct TappSampleProjectApp: App {
                 SplashScreenView(isActive: $isSplashActive)
             } else {
                 VibeView()
+                    .onOpenURL { url in
+                        if url.absoluteString == "vibeapp://open" {
+                            showAlert = true
+                        }
+                    }
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Launched from Widget!"), message: Text("Pick Vibe for today!"), dismissButton: .default(Text("Okay")))
+                    }
             }
         }
     }
