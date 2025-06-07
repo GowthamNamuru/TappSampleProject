@@ -13,7 +13,7 @@ struct VibeView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Pick your vibe")
+            Text(viewModel.title)
                 .font(.title)
 
             ForEach(viewModel.availableVibes, id: \.self) { vibe in

@@ -21,6 +21,9 @@ final class VibeViewModel: ObservableObject {
     @Published private(set) var vibeCount: Int = 0
     @Published private(set) var timeStamp: Date?
     @Published var showSuprise: Bool = false
+    var title: String {
+        "Pick your vibe"
+    }
 
     var selectedVibeText: String? {
         guard let selectedVibe else {
