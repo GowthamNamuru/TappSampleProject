@@ -11,7 +11,7 @@ import SwiftUI
 struct TappSampleProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            VibeView()
         }
     }
 }
