@@ -120,19 +120,19 @@ final class VibeViewModelTests: XCTestCase {
 
         sut.load()
 
-        XCTAssertFalse(sut.shouldSuprise(), "Should not surprise")
+        XCTAssertFalse(sut.showSuprise, "Should not surprise")
     }
 
     func test_shouldSuprise_returnTrueWhenCountIsMultipleOf7() {
         let (sut, store) = makeSUT()
-        for i in 0..<7 {
+        for i in 0..<6 {
             let threeDays = Date().getDate(byAdding: -i)
             store.store(.power, timeStamp: { threeDays })
         }
 
-        sut.load()
+        sut.update(selected: .focus)
 
-        XCTAssertTrue(sut.shouldSuprise(), "Should surprise")
+        XCTAssertTrue(sut.showSuprise, "Should surprise")
     }
 
     // MARK: - Helpers

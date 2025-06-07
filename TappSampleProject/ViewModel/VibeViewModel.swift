@@ -61,7 +61,7 @@ final class VibeViewModel: ObservableObject {
         (selectedVibe, timeStamp) = (previousVibe?.vibe, previousVibe?.timestamp)
     }
 
-    func shouldSuprise() -> Bool {
+    private func shouldSuprise() -> Bool {
         if let vibesCount = vibeStore.vibes()?.count, vibesCount.isMultiple(of: Constants.threasholdForSuprise) {
             return true
         }
