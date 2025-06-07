@@ -28,6 +28,6 @@ final class VibeViewModel: ObservableObject {
     func update(selected vibe: Vibe) {
         selectedVibe = vibe
         vibeStore.updateVibe(vibe)
-        vibeCount += 1
+        vibeCount = vibeStore.vibeCount()
     }
 }
