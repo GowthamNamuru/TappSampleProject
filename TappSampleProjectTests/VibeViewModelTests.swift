@@ -113,6 +113,28 @@ final class VibeViewModelTests: XCTestCase {
         XCTAssertEqual(sut.selectedVibeText, "Your vibe for \(threeDays.formattedDate()) is: \(Vibe.power.rawValue)")
     }
 
+    func test_shouldSuprise_returnFalse() {
+        let (sut, store) = makeSUT()
+        let threeDays = Date().getDate(byAdding: -3)
+        store.store(.power, timeStamp: { threeDays })
+
+        sut.load()
+
+        XCTAssertFalse(sut.shouldSuprise(), "Should not surprise")
+    }
+
+    func test_shouldSuprise_returnTrueWhenCountIsMultipleOf7() {
+        let (sut, store) = makeSUT()
+        for i in 0..<7 {
+            let threeDays = Date().getDate(byAdding: -i)
+            store.store(.power, timeStamp: { threeDays })
+        }
+
+        sut.load()
+
+        XCTAssertTrue(sut.shouldSuprise(), "Should surprise")
+    }
+
     // MARK: - Helpers
     private func makeSUT() -> (sut: VibeViewModel, store: VibeStoreProtocol) {
         let vibeStoreMock = VibeStoreMock()

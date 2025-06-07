@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>TappSampleProjectTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>VibeWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1511C33F2DF3BFD800E068B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1511C34F2DF3BFD900E068B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
