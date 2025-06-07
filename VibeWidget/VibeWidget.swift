@@ -26,13 +26,13 @@ struct VibeWidget: Widget {
 #Preview(as: .systemMedium) {
     VibeWidget()
 } timeline: {
-    VibeEntry(date: .now, vibe: nil, count: 0)
-    VibeEntry(date: .now + 1, vibe: .focus, count: 1)
+    VibeEntryViewModel(date: .now, vibe: nil, count: 0)
+    VibeEntryViewModel(date: .now + 1, vibe: .focus, count: 1)
 }
 
 #Preview(as: .systemLarge) {
     VibeWidget()
 } timeline: {
-    VibeEntry(date: .now, vibe: nil, count: 0)
-    VibeEntry(date: .now + 1, vibe: .focus, count: 1)
+    VibeEntryViewModel(date: .now, vibe: nil, count: 0)
+    VibeEntryViewModel(date: .now + 1, vibe: .focus, count: 1)
 }

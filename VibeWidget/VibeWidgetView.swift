@@ -8,29 +8,27 @@
 import SwiftUI
 
 struct VibeWidgetView: View {
-    let entry: VibeEntry
+    let entry: VibeEntryViewModel
 
     var body: some View {
         VStack(spacing: 8) {
-            if let vibe = entry.vibe {
-                Text("Today’s Vibe")
-                    .font(.headline)
-                Text("\(vibe.emoji)  \(vibe.text)")
+            Text(entry.text)
+                .font(.headline)
+            if let subTitle = entry.subTitle {
+                Text(subTitle)
                     .font(.largeTitle)
-            } else {
-                Text("No vibe yet — pick one!")
             }
             VStack {
-                Text("You've picked \(entry.count) vibes this week.")
+                Text(entry.pickedVibeText)
                     .font(.footnote)
-                if entry.shouldSuprise {
-                    Text("You have a SUPRISE. Tap to see")
+                if let supriseText = entry.supriseText {
+                    Text(supriseText)
                         .font(.footnote)
                         .overlay {
                             LinearGradient(colors: [.pink, .orange, .purple], startPoint: .leading, endPoint: .trailing)
                         }
                         .mask {
-                            Text("You have a SUPRISE. Tap to see")
+                            Text(supriseText)
                                 .font(.footnote)
                         }
                 }
@@ -42,5 +40,5 @@ struct VibeWidgetView: View {
 }
 
 #Preview {
-    VibeWidgetView(entry: VibeEntry(date: Date(), vibe: .focus, count: 1))
+    VibeWidgetView(entry: VibeEntryViewModel(date: Date(), vibe: .focus, count: 1))
 }

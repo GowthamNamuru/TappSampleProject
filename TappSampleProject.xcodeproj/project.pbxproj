@@ -80,7 +80,7 @@
 		15D4D4BC2DF4C1B900B8D674 /* Exceptions for "VibeWidget" folder in "TappSampleProject" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				VibeEntry.swift,
+				VibeEntryViewModel.swift,
 			);
 			target = 1511C33F2DF3BFD800E068B7 /* TappSampleProject */;
 		};
