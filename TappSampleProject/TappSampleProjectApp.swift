@@ -19,7 +19,7 @@ struct TappSampleProjectApp: App {
             } else {
                 VibeView()
                     .onOpenURL { url in
-                        if url.absoluteString == "vibeapp://open" {
+                        if url.absoluteString == VibeRequirements.deepLinkScheme() {
                             showAlert = true
                         }
                     }

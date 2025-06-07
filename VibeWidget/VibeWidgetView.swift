@@ -35,7 +35,7 @@ struct VibeWidgetView: View {
             }
         }
         .padding()
-        .widgetURL(URL(string: "vibeapp://open"))
+        .widgetURL(URL(string: VibeRequirements.deepLinkScheme()))
     }
 }
 
