@@ -20,6 +20,8 @@ final class VibeViewModel: ObservableObject {
     @Published private(set) var selectedVibe: Vibe?
     @Published private(set) var vibeCount: Int = 0
 
+    let availableVibes: [Vibe] = Vibe.all
+
     private var vibeStore: VibeStoreProtocol
 
     init(vibeStore: VibeStoreProtocol) {

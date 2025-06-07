@@ -45,6 +45,12 @@ final class VibeViewModelTests: XCTestCase {
         XCTAssertEqual(store.count, 1)
     }
 
+    func test_availableVibes() {
+        let (sut, _) = makeSUT()
+
+        XCTAssertEqual(sut.availableVibes, Vibe.all)
+    }
+
     // MARK: - Helpers
     private func makeSUT() -> (sut: VibeViewModel, store: VibeStoreProtocol) {
         let vibeStoreMock = VibeStoreMock()
