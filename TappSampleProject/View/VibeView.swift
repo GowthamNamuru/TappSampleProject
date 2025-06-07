@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct VibeView: View {
+
+    @StateObject private var viewModel = VibeViewModel(vibeStore: VibeDataProvider("group.com.tapp.vibeapp"))
+
     var body: some View {
-        Text("Hello, World!")
+        VStack(spacing: 20) {
+            Text("Pick your vibe")
+                .font(.title)
+
+            ForEach(viewModel.availableVibes, id: \.self) { vibe in
+                Button {
+                    withAnimation(.spring()) {
+                        viewModel.update(selected: vibe)
+                    }
+                } label: {
+                    Text(vibe.rawValue)
+                        .padding()
+                        .background(Color.blue.opacity(0.2))
+                        .cornerRadius(10)
+                        .scaleEffect(viewModel.selectedVibe == vibe ? 1.1 : 1.0)
+                }
+            }
+
+            if let vibe = viewModel.selectedVibe {
+                Text("Your vibe today: \(vibe.rawValue)")
+                    .font(.headline)
+                    .padding(.top)
+            }
+        }
+        .padding()
     }
 }
 
