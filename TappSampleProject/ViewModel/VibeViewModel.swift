@@ -19,6 +19,25 @@ protocol VibeStoreProtocol {
 final class VibeViewModel: ObservableObject {
     @Published private(set) var selectedVibe: Vibe?
     @Published private(set) var vibeCount: Int = 0
+    @Published private(set) var timeStamp: Date?
+
+    var selectedVibeText: String? {
+        guard let selectedVibe else {
+            return nil
+        }
+        var text = "Your vibe for "
+        if let date = timeStamp {
+            if date.isPreviousDay() {
+                text += "yesterday is: "
+            } else if date.isCurrentDay() {
+                text += "today is: "
+            } else {
+                text += "\(date.formattedDate()) is: "
+            }
+        }
+        text += "\(selectedVibe.rawValue)"
+        return text
+    }
 
     let availableVibes: [Vibe] = Vibe.all
 
@@ -30,7 +49,34 @@ final class VibeViewModel: ObservableObject {
 
     func update(selected vibe: Vibe, date: Date = Date()) {
         selectedVibe = vibe
+        timeStamp = date
         vibeStore.store(vibe, timeStamp: {date})
         vibeCount = vibeStore.count
+    }
+
+    func load() {
+        let previousVibe = vibeStore.vibes()?.sorted { $0.timestamp > $1.timestamp }.first
+        (selectedVibe, timeStamp) = (previousVibe?.vibe, previousVibe?.timestamp)
+    }
+}
+
+
+extension Date {
+    func isPreviousDay() -> Bool {
+        let calendar = Calendar.current
+        guard let yesterday = calendar.date(byAdding: .day, value: -1, to: Date()) else { return false }
+        return calendar.isDate(self, inSameDayAs: yesterday)
+    }
+
+    func isCurrentDay() -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(self, inSameDayAs: Date())
+    }
+
+    func formattedDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MMM-dd"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter.string(from: self)
     }
 }

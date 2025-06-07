@@ -37,6 +37,9 @@ struct VibeView: View {
             }
         }
         .padding()
+        .onAppear {
+            viewModel.load()
+        }
     }
 }
 
