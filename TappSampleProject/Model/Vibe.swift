@@ -8,10 +8,10 @@
 import Foundation
 
 enum Vibe: String, CaseIterable, Codable {
-    case focus = "🧠 Focus"
-    case power = "💪 Power"
-    case chill = "😴 Chill"
-    case joy = "😂 Joy"
+    case focus
+    case power
+    case chill
+    case joy
 
     static let all: [Vibe] = [.focus, .power, .chill, .joy]
 
@@ -29,16 +29,7 @@ enum Vibe: String, CaseIterable, Codable {
     }
 
     var text: String {
-        switch self {
-        case .focus:
-            return "Focus"
-        case .power:
-            return "Power"
-        case .chill:
-            return "Chill"
-        case .joy:
-            return "Joy"
-        }
+        return self.rawValue.capitalized
     }
 }
 

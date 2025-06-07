@@ -36,7 +36,7 @@ final class VibeViewModel: ObservableObject {
                 text += "\(date.formattedDate()) is: "
             }
         }
-        text += "\(selectedVibe.rawValue)"
+        text += "\(selectedVibe.emoji + " " + selectedVibe.text)"
         return text
     }
 

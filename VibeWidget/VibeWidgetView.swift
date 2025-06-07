@@ -15,7 +15,7 @@ struct VibeWidgetView: View {
             if let vibe = entry.vibe {
                 Text("Today’s Vibe")
                     .font(.headline)
-                Text(vibe.rawValue)
+                Text("\(vibe.emoji)  \(vibe.text)")
                     .font(.largeTitle)
                     .scaleEffect(entry.count % 7 == 0 ? 1.2 : 1.0)
                     .animation(.spring(), value: entry.count)
