@@ -22,13 +22,20 @@ struct VibeWidgetView: View {
             } else {
                 Text("No vibe yet — pick one!")
             }
-
-            Text("You've picked \(entry.count) vibes this week.")
-                .font(.footnote)
-
-            if entry.count % 7 == 0 && entry.count != 0 {
-                Text("🎉")
-                    .font(.largeTitle)
+            VStack {
+                Text("You've picked \(entry.count) vibes this week.")
+                    .font(.footnote)
+                if entry.shouldSuprise {
+                    Text("You have a SUPRISE. Tap to see")
+                        .font(.footnote)
+                        .overlay {
+                            LinearGradient(colors: [.pink, .orange, .purple], startPoint: .leading, endPoint: .trailing)
+                        }
+                        .mask {
+                            Text("You have a SUPRISE. Tap to see")
+                                .font(.footnote)
+                        }
+                }
             }
         }
         .padding()

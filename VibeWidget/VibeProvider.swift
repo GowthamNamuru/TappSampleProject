@@ -41,6 +41,18 @@ struct VibeEntry: TimelineEntry {
     let vibe: Vibe?
     let count: Int
 
+    var shouldSuprise: Bool {
+        count.isMultiple(of: 7)
+    }
+
+    var supriseText: String {
+        var text = "You've picked \(count) vibes this week."
+        if shouldSuprise {
+            text = "You have a SUPRISE. Tap to see"
+        }
+        return text
+    }
+
     var backgroundColor: Color {
         switch vibe {
         case .joy:
